@@ -28,17 +28,30 @@ const data = [
 },
 
 ];
-const topDesserts = data.map(dessert => {
-  return{
-    content: `${dessert.title}-${dessert.description}`,
-    price: dessert.price, 
-  }
-})
+// *** map() ***
+
+// const topDesserts = data.map(dessert => {
+//   return{
+//     content: `${dessert.title}-${dessert.description}`,
+//     price: dessert.price, 
+//   }
+// })
+
+
 const App = () => {
-  console.log(topDesserts);
+  // displaying list of desserts
+  // console.log(topDesserts);
+
+  const listItem = data.map(dessert=>{
+    const itemText = `${dessert.title} - ${dessert.price}`
+    return<li>{itemText}</li>
+  })
   return(
-    <>
-    </>
+   <div>
+    <ul >
+      {listItem}
+    </ul>
+   </div>
   )
 }
 
